@@ -47,15 +47,31 @@ console.log(`Alex 買完課程了，他一共剩下 ${AlexBudget} 元`);
 // 請依照你看到的內容來嘗試設計變數和值（至少 3 個）
 
 // 題目四答案
-
-
-
+const classNum = 14;
+const classTime = 50; 
+const discountPercent = 0.9;
+const discountPrice = 180;
+let totalPrice = 2520
 
 // ### 題目五：布林值與變數定義，看是否有用對 const, let
 // 情境：Alex 在往健身房的路上，望向城市的風景，請描述她看到的一切，並宣告變數與賦予值
 // 4-1. Alex 在等紅綠燈，他抬頭看一下現在是紅燈，還有 28 秒綠燈（最多 3 個宣告）
 // 4-2. 目前一起等待的機車有 8 台
 // 4.3. Alex 望向天空，看到天上有 5 朵白雲和 1 顆太陽
+
+// 題目五答案
+// 4-1
+let redLight = true;
+let greenLight = false;
+let time = 28;
+
+//4-2
+let motorcycle = 8;
+
+//4-3
+let cloud = 5;
+const sun = 1;
+
 
 // ### 題目六：情境題：簡單變數計算
 // 情境：Alex 每天都會帶著 2000cc 的水壺
@@ -67,8 +83,10 @@ console.log(`Alex 買完課程了，他一共剩下 ${AlexBudget} 元`);
 // 以下的 Code 寫到一半，再請幫幫 Alex
 
 let myWater = 2000; // 水壺容量
-myWater -= 500; // 早上喝了 500cc
-
+myWater -= 500;     // 早上喝了 500cc
+myWater += 800;     // 中午又喝了 800cc
+myWater += 1000;    // 下午去健身前，先裝了 1000cc 的水
+myWater -= 700;     // 健身時，又喝掉了 700cc
 console.log(`Alex 的水壺還有 ${myWater}cc 的水`);
 
 // ### 題目七：情境題：變數計算
@@ -80,40 +98,51 @@ console.log(`Alex 的水壺還有 ${myWater}cc 的水`);
 
 let totalBill = 0;
 const machineUsePrice = 50;
-
+const classPrice = 150;
+let machineTime = 3;
+let classTaken = 2;
+let machineUsePriceTotal = machineUsePrice * machineTime;
+let groupClassesTotal = classPrice * classTaken;
+totalBill = machineUsePriceTotal + groupClassesTotal;
 console.log(
-  `Anna 本週器械使用費共 ${machineUsePriceTotal} 元，團體課費用共 ${groupClassesTotal} 元，一共消費金額是 ${total}元`
+  `Anna 本週器械使用費共 ${machineUsePriceTotal} 元，團體課費用共 ${groupClassesTotal} 元，一共消費金額是 ${totalBill}元`
 );
 
 // ### 題目八：變數重新賦予值
 // 情境：請依照以下程式碼告知答案是多少，並在下方用註解方式寫上這五行程式碼做了什麼事
 // 以下程式碼請勿變更
 let a = 8; // 範例：宣告了一個 a 的變數，並賦予了一個 8 的數字型別
-let b = 0;
-a = 13;
-a = b + 4;
-a - b;
-b += 1;
+let b = 0; // 宣告了一個 b 的變數，並賦予了一個 0 的數字型別
+a = 13; // 將 a 變數賦值為 13
+a = b + 4; // 將 a 變數賦值為 (b 變數 + 4)
+a - b; // 將 a 變數減掉 b 變數
+b += 1; // 將 b 變數賦值為 (b 變數 + 1)
+// 答案為： a = 4 、 b = 1
 
 // ### 題目九：型別查詢
 // 請不要觀看 console.log，透過註解告知解答每個變數的型別
-let c = 'world';
-let d = 456;
-let e = c + d;
-let f = false;
-let g = d + d;
-let h = f + g;
+let c = 'world'; 
+let d = 456; 
+let e = c + d; 
+let f = false; 
+let g = d + d; 
+let h = f + g; 
 
 // 請從以下新增註解，告知上面每行各別是哪些型別
-// a 是 string
-// b 是 ???
+// c 是 string
+// d 是 數字
+// e 是 string
+// f 是 boolean
+// g 是 數字
+// h 是 數字
 
 // ### 題目十：傳值與傳參考
 // 情境：請依照程式碼告知答案是多少，並在下方用註解方式寫上這五行程式碼做了什麼事
 // 以下程式碼請勿變更
 
-let numberArr1 = [5, 10, 15];
-let numberArr2 = numberArr1;
-numberArr2.push(20);
-numberArr2 = [25, 30, 35];
-console.log(numberArr1, numberArr2);
+let numberArr1 = [5, 10, 15]; // 宣告一個陣列numberArr1
+let numberArr2 = numberArr1; // 宣告另一個陣列numberArr2(但指向同一個記憶體)
+numberArr2.push(20); //陣列numberArr2變為[5,10,15,20](numberArr1也同時變成[5,10,15,20])
+numberArr2 = [25, 30, 35]; //將陣列numberArr2重新指向新的記憶體，變為[25, 30, 35]，不再與陣列numberArr1共用
+console.log(numberArr1, numberArr2); //印出陣列numberArr1、陣列numberArr2
+//答案為：[5,10,15,20], [25,30,35]
